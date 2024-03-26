@@ -1,0 +1,52 @@
+{
+  "name": "poke-api",
+  "version": "0.0.1",
+  "author": "JStenmark",
+  "main": "build/src/server.js",
+  "scripts": {
+    "start": "node build/src/server.js",
+    "start:ts": "ts-node src/server.ts",
+    "build": "npm run build:tsoa && npm run build:tsc",
+    "build:tsc": "tsc && tsc-alias",
+    "build:tsoa": "tsoa spec-and-routes",
+    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "test": "jest --forceExit --detectOpenHandles",
+    "lint": "eslint --ignore-path .gitignore --ext .ts src/",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "class-validator": "^0.13.2",
+    "express": "^4.18.1",
+    "mongoose": "^8.2.3",
+    "swagger-ui-express": "^5.0.0",
+    "tslib": "^2.6.2",
+    "tsoa": "^6.1.5",
+    "tsyringe": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^28.1.6",
+    "@types/joi": "^17.2.3",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.11.30",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^28.1.1",
+    "nodemon": "^3.1.0",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.7.0",
+    "typescript": "^5.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstenmark/poke-api.git"
+  }
+}
